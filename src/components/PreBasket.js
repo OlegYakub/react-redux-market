@@ -21,9 +21,9 @@ class PreBasket extends Component {
       let data = this.props.store;
       let quantityOfGoods = 0;
 
-      data.forEach((good, id) => {
-        quantityOfGoods = quantityOfGoods + parseInt(good.quan);
-      })
+      data.forEach((good) => {
+        quantityOfGoods = quantityOfGoods + parseInt(good.quan, 10);
+      });
       return (
         <div className="pre-basket">
           Мини корзина: ({quantityOfGoods})

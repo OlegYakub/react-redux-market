@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PreBasket from './PreBasket';
+
 
 class About extends Component {
     render() {

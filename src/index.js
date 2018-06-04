@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-//import { syncHistoryWithStore } from 'react-router-redux'
 
 import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+import productListMiddleware from './middleware/productList';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const middleware = applyMiddleware(productListMiddleware);
 
-//const history = syncHistoryWithStore(hashHistory, store);
+const store = createStore(reducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), middleware);
 
 ReactDOM.render(
     <BrowserRouter>

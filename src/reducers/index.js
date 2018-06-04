@@ -7,5 +7,5 @@ import { goods } from './goods';
 export default combineReducers({
     routing: routerReducer,
     basket,
-    goods
+    goods,
 })
